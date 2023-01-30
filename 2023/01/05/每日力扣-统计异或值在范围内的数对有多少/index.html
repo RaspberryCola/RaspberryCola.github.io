@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>每日力扣 -统计异或值在范围内的数对有多少 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="原题链接： 1803. 统计异或值在范围内的数对有多少 题目如下给你一个整数数组 nums （下标 从 0 开始 计数）以及两个整数：low 和 high ，请返回 漂亮数对 的数目。漂亮数对 是一个形如 (i,j) 的数对，其中 0 &lt;&#x3D; i &lt; j &lt; nums.length 且 low &lt;&#x3D; (nums[i] XOR nums[j]) &lt;&#x3D; high 。示例 1">
+<meta property="og:type" content="article">
+<meta property="og:title" content="每日力扣 -统计异或值在范围内的数对有多少">
+<meta property="og:url" content="http://example.com/2023/01/05/%E6%AF%8F%E6%97%A5%E5%8A%9B%E6%89%A3-%E7%BB%9F%E8%AE%A1%E5%BC%82%E6%88%96%E5%80%BC%E5%9C%A8%E8%8C%83%E5%9B%B4%E5%86%85%E7%9A%84%E6%95%B0%E5%AF%B9%E6%9C%89%E5%A4%9A%E5%B0%91/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="原题链接： 1803. 统计异或值在范围内的数对有多少 题目如下给你一个整数数组 nums （下标 从 0 开始 计数）以及两个整数：low 和 high ，请返回 漂亮数对 的数目。漂亮数对 是一个形如 (i,j) 的数对，其中 0 &lt;&#x3D; i &lt; j &lt; nums.length 且 low &lt;&#x3D; (nums[i] XOR nums[j]) &lt;&#x3D; high 。示例 1">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-01-05T02:52:01.000Z">
+<meta property="article:modified_time" content="2023-01-15T09:35:26.000Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-每日力扣-统计异或值在范围内的数对有多少" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2023/01/05/%E6%AF%8F%E6%97%A5%E5%8A%9B%E6%89%A3-%E7%BB%9F%E8%AE%A1%E5%BC%82%E6%88%96%E5%80%BC%E5%9C%A8%E8%8C%83%E5%9B%B4%E5%86%85%E7%9A%84%E6%95%B0%E5%AF%B9%E6%9C%89%E5%A4%9A%E5%B0%91/" class="article-date">
+  <time datetime="2023-01-05T02:52:01.000Z" itemprop="datePublished">2023-01-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      每日力扣 -统计异或值在范围内的数对有多少
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>原题链接：</strong> <a target="_blank" rel="noopener" href="https://leetcode.cn/problems/count-pairs-with-xor-in-a-range/"><strong>1803. 统计异或值在范围内的数对有多少</strong></a></p>
+<p><strong>题目如下</strong><br>给你一个整数数组 <code>nums </code>（下标 从 0 开始 计数）以及两个整数：<code>low</code> 和 <code>high</code> ，请返回 <strong>漂亮数对</strong> 的数目。<br><strong>漂亮数对</strong> 是一个形如 <code>(i,j)</code> 的数对，其中 <code>0 &lt;= i &lt; j &lt; nums.length</code> 且 <code>low &lt;= (nums[i] XOR nums[j]) &lt;= high</code> 。<br>示例 1：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">输入：nums = [1,4,2,7], low = 2, high = 6</span><br><span class="line">输出：6</span><br><span class="line">解释：所有漂亮数对 (i, j) 列出如下：</span><br><span class="line">    - (0, 1): nums[0] XOR nums[1] = 5 </span><br><span class="line">    - (0, 2): nums[0] XOR nums[2] = 3</span><br><span class="line">    - (0, 3): nums[0] XOR nums[3] = 6</span><br><span class="line">    - (1, 2): nums[1] XOR nums[2] = 6</span><br><span class="line">    - (1, 3): nums[1] XOR nums[3] = 3</span><br><span class="line">    - (2, 3): nums[2] XOR nums[3] = 5</span><br></pre></td></tr></table></figure>
+<p>示例 2：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">输入：nums = [<span class="number">9</span>,<span class="number">8</span>,<span class="number">4</span>,<span class="number">2</span>,<span class="number">1</span>], low = <span class="number">5</span>, high = <span class="number">14</span></span><br><span class="line">输出：<span class="number">8</span></span><br><span class="line">解释：所有漂亮数对 (i, j) 列出如下：</span><br><span class="line">​​​​​    - (<span class="number">0</span>, <span class="number">2</span>): nums[<span class="number">0</span>] XOR nums[<span class="number">2</span>] = <span class="number">13</span></span><br><span class="line">    - (<span class="number">0</span>, <span class="number">3</span>): nums[<span class="number">0</span>] XOR nums[<span class="number">3</span>] = <span class="number">11</span></span><br><span class="line">    - (<span class="number">0</span>, <span class="number">4</span>): nums[<span class="number">0</span>] XOR nums[<span class="number">4</span>] = <span class="number">8</span></span><br><span class="line">    - (<span class="number">1</span>, <span class="number">2</span>): nums[<span class="number">1</span>] XOR nums[<span class="number">2</span>] = <span class="number">12</span></span><br><span class="line">    - (<span class="number">1</span>, <span class="number">3</span>): nums[<span class="number">1</span>] XOR nums[<span class="number">3</span>] = <span class="number">10</span></span><br><span class="line">    - (<span class="number">1</span>, <span class="number">4</span>): nums[<span class="number">1</span>] XOR nums[<span class="number">4</span>] = <span class="number">9</span></span><br><span class="line">    - (<span class="number">2</span>, <span class="number">3</span>): nums[<span class="number">2</span>] XOR nums[<span class="number">3</span>] = <span class="number">6</span></span><br><span class="line">    - (<span class="number">2</span>, <span class="number">4</span>): nums[<span class="number">2</span>] XOR nums[<span class="number">4</span>] = <span class="number">5</span></span><br></pre></td></tr></table></figure>
+
+<p>提示：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> &lt;= nums.length &lt;= <span class="number">2</span> * <span class="number">104</span></span><br><span class="line"><span class="number">1</span> &lt;= nums[i] &lt;= <span class="number">2</span> * <span class="number">104</span></span><br><span class="line"><span class="number">1</span> &lt;= low &lt;= high &lt;= <span class="number">2</span> * <span class="number">104</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="首先尝试暴力求解"><a href="#首先尝试暴力求解" class="headerlink" title="首先尝试暴力求解"></a>首先尝试暴力求解</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line">public:</span><br><span class="line">	<span class="type">int</span> <span class="title function_">countPairs</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="type">int</span>&gt;&amp; nums, <span class="type">int</span> low, <span class="type">int</span> high)</span> &#123;</span><br><span class="line">		<span class="type">int</span> i, j, count = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; nums.size(); i++) &#123;</span><br><span class="line">			<span class="keyword">for</span> (j = i + <span class="number">1</span>; j &lt; nums.size(); j++) &#123;</span><br><span class="line">				<span class="type">int</span> t = nums[i] ^ nums[j];</span><br><span class="line">				<span class="keyword">if</span> (t &gt;= low &amp;&amp; t &lt;= high)</span><br><span class="line">					count++;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> count;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p><strong>结果当然是超时了，需要换个思路</strong></p>
+<h3 id="力扣题解方法：字典树"><a href="#力扣题解方法：字典树" class="headerlink" title="力扣题解方法：字典树"></a>力扣题解方法：字典树</h3><p>先给自己挖个坑，以后填</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/01/05/%E6%AF%8F%E6%97%A5%E5%8A%9B%E6%89%A3-%E7%BB%9F%E8%AE%A1%E5%BC%82%E6%88%96%E5%80%BC%E5%9C%A8%E8%8C%83%E5%9B%B4%E5%86%85%E7%9A%84%E6%95%B0%E5%AF%B9%E6%9C%89%E5%A4%9A%E5%B0%91/" data-id="cldis0obl0006icutc09m7e7c" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/01/10/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          深度学习笔记
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/01/04/cpp%E7%AC%94%E8%AE%B0/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">C++笔记</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/01/30/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/21/Python%E7%AC%94%E8%AE%B0/">Python笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/21/Python%E7%BB%83%E4%B9%A0%E9%A2%98/">Python练习题</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/10/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">深度学习笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/05/%E6%AF%8F%E6%97%A5%E5%8A%9B%E6%89%A3-%E7%BB%9F%E8%AE%A1%E5%BC%82%E6%88%96%E5%80%BC%E5%9C%A8%E8%8C%83%E5%9B%B4%E5%86%85%E7%9A%84%E6%95%B0%E5%AF%B9%E6%9C%89%E5%A4%9A%E5%B0%91/">每日力扣 -统计异或值在范围内的数对有多少</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2023 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

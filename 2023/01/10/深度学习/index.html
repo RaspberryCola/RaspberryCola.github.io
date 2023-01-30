@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>深度学习笔记 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="深度学习2.预备知识2.1数据操作2.1.1入门1234567891011121314import torchx &#x3D; torch.arange(12) #创建行向量xx.shape				 #张量形状x.numel()			 #张量元素个数X &#x3D; x.reshape(3, 4)	 #改变一个张量的形状而不改变元素数量和元素值torch.zeros((2, 3, 4))	#元素全0，形状为(2,3,">
+<meta property="og:type" content="article">
+<meta property="og:title" content="深度学习笔记">
+<meta property="og:url" content="http://example.com/2023/01/10/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="深度学习2.预备知识2.1数据操作2.1.1入门1234567891011121314import torchx &#x3D; torch.arange(12) #创建行向量xx.shape				 #张量形状x.numel()			 #张量元素个数X &#x3D; x.reshape(3, 4)	 #改变一个张量的形状而不改变元素数量和元素值torch.zeros((2, 3, 4))	#元素全0，形状为(2,3,">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-01-10T14:01:07.000Z">
+<meta property="article:modified_time" content="2023-01-30T12:08:00.879Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-深度学习" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2023/01/10/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" class="article-date">
+  <time datetime="2023-01-10T14:01:07.000Z" itemprop="datePublished">2023-01-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      深度学习笔记
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="深度学习"><a href="#深度学习" class="headerlink" title="深度学习"></a>深度学习</h1><h1 id="2-预备知识"><a href="#2-预备知识" class="headerlink" title="2.预备知识"></a>2.预备知识</h1><h3 id="2-1数据操作"><a href="#2-1数据操作" class="headerlink" title="2.1数据操作"></a>2.1数据操作</h3><h4 id="2-1-1入门"><a href="#2-1-1入门" class="headerlink" title="2.1.1入门"></a>2.1.1入门</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line">x = torch.arange(<span class="number">12</span>) <span class="comment">#创建行向量x</span></span><br><span class="line">x.shape				 <span class="comment">#张量形状</span></span><br><span class="line">x.numel()			 <span class="comment">#张量元素个数</span></span><br><span class="line">X = x.reshape(<span class="number">3</span>, <span class="number">4</span>)	 <span class="comment">#改变一个张量的形状而不改变元素数量和元素值</span></span><br><span class="line"></span><br><span class="line">torch.zeros((<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>))	<span class="comment">#元素全0，形状为(2,3,4)的张量</span></span><br><span class="line">torch.ones((<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>))	<span class="comment">#元素全1</span></span><br><span class="line">torch.randn(<span class="number">3</span>, <span class="number">4</span>)		<span class="comment">#随机</span></span><br><span class="line"></span><br><span class="line">torch.tensor([[<span class="number">2</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">3</span>], [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>], [<span class="number">4</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">1</span>]])</span><br><span class="line">输出：tensor([[<span class="number">2</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">3</span>],</span><br><span class="line">        [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>],</span><br><span class="line">        [<span class="number">4</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">1</span>]])</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-1-2运算符"><a href="#2-1-2运算符" class="headerlink" title="2.1.2运算符"></a>2.1.2运算符</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">x = torch.tensor([<span class="number">1.0</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">8</span>])</span><br><span class="line">y = torch.tensor([<span class="number">2</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">2</span>])</span><br><span class="line">x + y, x - y, x * y, x / y, x ** y  <span class="comment"># **运算符是求幂运算</span></span><br><span class="line">torch.exp(x)</span><br><span class="line"></span><br><span class="line">X = torch.arange(<span class="number">12</span>, dtype=torch.float32).reshape((<span class="number">3</span>,<span class="number">4</span>))		<span class="comment"># dtype用来定义数据类型</span></span><br><span class="line">Y = torch.tensor([[<span class="number">2.0</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">3</span>], [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>], [<span class="number">4</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">1</span>]])</span><br><span class="line">torch.cat((X, Y), dim=<span class="number">0</span>)	<span class="comment">#轴-0</span></span><br><span class="line">torch.cat((X, Y), dim=<span class="number">1</span>)	<span class="comment">#轴-1</span></span><br><span class="line"></span><br><span class="line">X == Y</span><br><span class="line">X.<span class="built_in">sum</span>()</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-1-3-广播机制"><a href="#2-1-3-广播机制" class="headerlink" title="2.1.3 广播机制"></a>2.1.3 广播机制</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a = torch.arange(<span class="number">3</span>).reshape((<span class="number">3</span>, <span class="number">1</span>))</span><br><span class="line">b = torch.arange(<span class="number">2</span>).reshape((<span class="number">1</span>, <span class="number">2</span>))</span><br><span class="line">a+b</span><br><span class="line">结果为：tensor([[<span class="number">0</span>, <span class="number">1</span>],</span><br><span class="line">        [<span class="number">1</span>, <span class="number">2</span>],</span><br><span class="line">        [<span class="number">2</span>, <span class="number">3</span>]])</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-1-4索引和切片"><a href="#2-1-4索引和切片" class="headerlink" title="2.1.4索引和切片"></a>2.1.4索引和切片</h4><p>读</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">X[-<span class="number">1</span>]	<span class="comment">#访问最后一行</span></span><br><span class="line">X[<span class="number">1</span>:<span class="number">3</span>]  <span class="comment">#访问第一行和第二行</span></span><br></pre></td></tr></table></figure>
+
+<p>写</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">X[1, 2] = 9</span><br><span class="line">X[0:2, :] = 12</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="2-1-5节省内存"><a href="#2-1-5节省内存" class="headerlink" title="2.1.5节省内存"></a>2.1.5节省内存</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">before = <span class="built_in">id</span>(Y)		<span class="comment">#将Y的地址保存</span></span><br><span class="line">Y = Y + X			<span class="comment">#将Y+X赋值为Y</span></span><br><span class="line"><span class="built_in">id</span>(Y) == before		</span><br><span class="line">输出结果为：<span class="literal">False</span>		<span class="comment">#新的Y的id不等于以前！</span></span><br></pre></td></tr></table></figure>
+
+<p>原地操作</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Z = torch.zeros_like(Y)	<span class="comment">#和Y的格式一样，但数据是0</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;id(Z):&#x27;</span>, <span class="built_in">id</span>(Z))	<span class="comment">#打印Z的id</span></span><br><span class="line">Z[:] = X + Y			</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;id(Z):&#x27;</span>, <span class="built_in">id</span>(Z))</span><br></pre></td></tr></table></figure>
+
+<p>如果在后续计算中没有重复使用<code>X</code>， 我们也可以使用<code>X[:] = X + Y</code>或<code>X += Y</code>来减少操作的内存开销</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">before = <span class="built_in">id</span>(X)</span><br><span class="line">X += Y</span><br><span class="line"><span class="built_in">id</span>(X) == before</span><br><span class="line">输出结果为：<span class="literal">True</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="2-1-6转换为其他python对象"><a href="#2-1-6转换为其他python对象" class="headerlink" title="2.1.6转换为其他python对象"></a>2.1.6转换为其他python对象</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">A = X.numpy()</span><br><span class="line">B = torch.tensor(A)</span><br><span class="line"><span class="built_in">type</span>(A), <span class="built_in">type</span>(B)</span><br><span class="line">输出为：(numpy.ndarray, torch.Tensor)</span><br></pre></td></tr></table></figure>
+
+
+<p>将大小为1的张量转换为Python标量，我们可以调用<code>item</code>函数或Python的内置函数</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = torch.tensor([<span class="number">3.5</span>])</span><br><span class="line">a, a.item(), <span class="built_in">float</span>(a), <span class="built_in">int</span>(a)</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-2数据预处理"><a href="#2-2数据预处理" class="headerlink" title="2.2数据预处理"></a>2.2数据预处理</h3><h4 id="2-2-1读取数据集"><a href="#2-2-1读取数据集" class="headerlink" title="2.2.1读取数据集"></a>2.2.1读取数据集</h4><p>创建一个人工数据集，并存储在CSV（逗号分隔值）文件</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line">os.makedirs(os.path.join(<span class="string">&#x27;home&#x27;</span>, <span class="string">&#x27;cola&#x27;</span>,<span class="string">&#x27;Documents&#x27;</span>), exist_ok=<span class="literal">True</span>)</span><br><span class="line">data_file = os.path.join(<span class="string">&#x27;home&#x27;</span>, <span class="string">&#x27;cola&#x27;</span>,<span class="string">&#x27;Documents&#x27;</span>,<span class="string">&#x27;house_tiny.csv&#x27;</span>)</span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(data_file, <span class="string">&#x27;w&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.write(<span class="string">&#x27;NumRooms,Alley,Price\n&#x27;</span>)  	<span class="comment"># 列名</span></span><br><span class="line">    f.write(<span class="string">&#x27;NA,Pave,127500\n&#x27;</span>)  		<span class="comment"># 每行表示一个数据样本</span></span><br><span class="line">    f.write(<span class="string">&#x27;2,NA,106000\n&#x27;</span>)</span><br><span class="line">    f.write(<span class="string">&#x27;4,NA,178100\n&#x27;</span>)</span><br><span class="line">    f.write(<span class="string">&#x27;NA,NA,140000\n&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 如果没有安装pandas，只需取消对以下行的注释来安装pandas</span></span><br><span class="line"><span class="comment"># !pip install pandas</span></span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line">data = pd.read_csv(data_file)	<span class="comment">#pd.read_csv()</span></span><br><span class="line"><span class="built_in">print</span>(data)</span><br><span class="line">结果如下：</span><br><span class="line">   NumRooms Alley   Price</span><br><span class="line"><span class="number">0</span>       NaN  Pave  <span class="number">127500</span></span><br><span class="line"><span class="number">1</span>       <span class="number">2.0</span>   NaN  <span class="number">106000</span></span><br><span class="line"><span class="number">2</span>       <span class="number">4.0</span>   NaN  <span class="number">178100</span></span><br><span class="line"><span class="number">3</span>       NaN   NaN  <span class="number">140000</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="2-2-2处理缺失值"><a href="#2-2-2处理缺失值" class="headerlink" title="2.2.2处理缺失值"></a>2.2.2处理缺失值</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">inputs, outputs = data.iloc[:, <span class="number">0</span>:<span class="number">2</span>], data.iloc[:, <span class="number">2</span>] <span class="comment">#iloc位置索引 分为inputs和outputs</span></span><br><span class="line">inputs = inputs.fillna(inputs.mean())				 <span class="comment">#插值法</span></span><br><span class="line"><span class="built_in">print</span>(inputs)</span><br><span class="line">结果如下：</span><br><span class="line">   NumRooms Alley</span><br><span class="line"><span class="number">0</span>       <span class="number">3.0</span>  Pave</span><br><span class="line"><span class="number">1</span>       <span class="number">2.0</span>   NaN</span><br><span class="line"><span class="number">2</span>       <span class="number">4.0</span>   NaN</span><br><span class="line"><span class="number">3</span>       <span class="number">3.0</span>   NaN</span><br></pre></td></tr></table></figure>
+
+<p>对于不是数值的</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">inputs = pd.get_dummies(inputs, dummy_na=<span class="literal">True</span>) <span class="comment">#利用dummy，dummy_na=True表示na也为一类</span></span><br><span class="line"><span class="built_in">print</span>(inputs)</span><br><span class="line">结果如下：</span><br><span class="line">   NumRooms  Alley_Pave  Alley_nan</span><br><span class="line"><span class="number">0</span>       <span class="number">3.0</span>           <span class="number">1</span>          <span class="number">0</span></span><br><span class="line"><span class="number">1</span>       <span class="number">2.0</span>           <span class="number">0</span>          <span class="number">1</span></span><br><span class="line"><span class="number">2</span>       <span class="number">4.0</span>           <span class="number">0</span>          <span class="number">1</span></span><br><span class="line"><span class="number">3</span>       <span class="number">3.0</span>           <span class="number">0</span>          <span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="2-2-3转换为张量"><a href="#2-2-3转换为张量" class="headerlink" title="2.2.3转换为张量"></a>2.2.3转换为张量</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"></span><br><span class="line">X, y = torch.tensor(inputs.values), Dtorch.tensor(outputs.values)</span><br><span class="line">X, y</span><br><span class="line">(tensor([[<span class="number">3.</span>, <span class="number">1.</span>, <span class="number">0.</span>],</span><br><span class="line">         [<span class="number">2.</span>, <span class="number">0.</span>, <span class="number">1.</span>],</span><br><span class="line">         [<span class="number">4.</span>, <span class="number">0.</span>, <span class="number">1.</span>],</span><br><span class="line">         [<span class="number">3.</span>, <span class="number">0.</span>, <span class="number">1.</span>]], dtype=torch.float64),	<span class="comment">##传统python默认为float64，深度学习中用32更快</span></span><br><span class="line"> tensor([<span class="number">127500</span>, <span class="number">106000</span>, <span class="number">178100</span>, <span class="number">140000</span>]))</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-3线性代数"><a href="#2-3线性代数" class="headerlink" title="2.3线性代数"></a>2.3线性代数</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"></span><br><span class="line"><span class="comment">#标量</span></span><br><span class="line">x = torch.tensor(<span class="number">3.0</span>)		</span><br><span class="line">y = torch.tensor(<span class="number">2.0</span>)</span><br><span class="line">x + y, x * y, x / y, x**y</span><br><span class="line"></span><br><span class="line"><span class="comment">#向量</span></span><br><span class="line">x = torch.arange(<span class="number">4</span>)</span><br><span class="line">x[<span class="number">3</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">#长度 维度 形状</span></span><br><span class="line"><span class="built_in">len</span>(x)</span><br><span class="line">x.shape</span><br><span class="line"></span><br><span class="line"><span class="comment">#3x4矩阵</span></span><br><span class="line">A = torch.arange(<span class="number">20</span>).reshape(<span class="number">5</span>, <span class="number">4</span>) </span><br><span class="line"><span class="comment">#转置</span></span><br><span class="line">A.T</span><br><span class="line"></span><br><span class="line"><span class="comment">#比较</span></span><br><span class="line">B = torch.tensor([[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], [<span class="number">2</span>, <span class="number">0</span>, <span class="number">4</span>], [<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]])</span><br><span class="line">B == B.T</span><br><span class="line"></span><br><span class="line"><span class="comment">#张量</span></span><br><span class="line">X = torch.arange(<span class="number">24</span>).reshape(<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#矩阵加法，乘法</span></span><br><span class="line">A = torch.arange(<span class="number">20</span>, dtype=torch.float32).reshape(<span class="number">5</span>, <span class="number">4</span>)</span><br><span class="line">B = A.clone()  <span class="comment"># 通过分配新内存，将A的一个副本分配给B</span></span><br><span class="line">A, A + B, A * B</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">x = torch.arange(<span class="number">4</span>, dtype=torch.float32)</span><br><span class="line"><span class="comment">#总和</span></span><br><span class="line">x.<span class="built_in">sum</span>()</span><br><span class="line"></span><br><span class="line"><span class="comment">#降维</span></span><br><span class="line">A_sum_axis0 = A.<span class="built_in">sum</span>(axis=<span class="number">0</span>)</span><br><span class="line">A_sum_axis0 = A.<span class="built_in">sum</span>(axis=<span class="number">0</span>)</span><br><span class="line">A.<span class="built_in">sum</span>(axis=[<span class="number">0</span>, <span class="number">1</span>])  <span class="comment"># 结果和A.sum()相同</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#平均值</span></span><br><span class="line">A.mean() </span><br><span class="line">A.average()</span><br><span class="line"></span><br><span class="line"><span class="comment">#求和 数量</span></span><br><span class="line">A.<span class="built_in">sum</span>()</span><br><span class="line">A.numel()</span><br><span class="line"></span><br><span class="line"><span class="comment">#降维数据处理</span></span><br><span class="line">A.mean(axis=<span class="number">0</span>)</span><br><span class="line">A.<span class="built_in">sum</span>(axis=<span class="number">0</span>)</span><br><span class="line">A.shape[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">#非降维求和</span></span><br><span class="line">sum_A = A.<span class="built_in">sum</span>(axis=<span class="number">1</span>,keepdims=<span class="literal">True</span>)</span><br><span class="line"><span class="comment">#广播除以sum_A</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#沿轴计算累计和</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#点积</span></span><br><span class="line">x=torch.arange(<span class="number">4</span>,dtype=torch.float32)</span><br><span class="line">y=torch.ones(<span class="number">4</span>,dtype=torch.float32)</span><br><span class="line">torch.dot(x,y)</span><br><span class="line">或者</span><br><span class="line">torch.<span class="built_in">sum</span>(x*y)</span><br><span class="line"><span class="comment">#向量积</span></span><br><span class="line">torch.mv(A,x)</span><br><span class="line"><span class="comment">#矩阵乘法</span></span><br><span class="line">torch.mm(A,B)</span><br><span class="line"></span><br><span class="line"><span class="comment">#L2范数计算</span></span><br><span class="line">u = torch.tensor([<span class="number">3.0</span>, -<span class="number">4.0</span>])</span><br><span class="line">torch.norm(u)</span><br><span class="line"><span class="comment">#L1范数计算</span></span><br><span class="line">torch.<span class="built_in">abs</span>(u).<span class="built_in">sum</span>()</span><br><span class="line"><span class="comment">#Frobenius范数</span></span><br><span class="line">torch.norm(torch.ones((<span class="number">4</span>, <span class="number">9</span>)))</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="2-4微积分"><a href="#2-4微积分" class="headerlink" title="2.4微积分"></a>2.4微积分</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line">%matplotlib inline</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#矩阵计算</span></span><br><span class="line">标量导数</span><br><span class="line"></span><br><span class="line"><span class="comment">#亚导数</span></span><br><span class="line">如y=|x|的导数</span><br><span class="line"></span><br><span class="line"><span class="comment">#梯度</span></span><br><span class="line">将导数拓展到向量</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/01/10/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" data-id="cldis0obl0007icut9e0689yw" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/01/21/Python%E7%BB%83%E4%B9%A0%E9%A2%98/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Python练习题
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/01/05/%E6%AF%8F%E6%97%A5%E5%8A%9B%E6%89%A3-%E7%BB%9F%E8%AE%A1%E5%BC%82%E6%88%96%E5%80%BC%E5%9C%A8%E8%8C%83%E5%9B%B4%E5%86%85%E7%9A%84%E6%95%B0%E5%AF%B9%E6%9C%89%E5%A4%9A%E5%B0%91/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">每日力扣 -统计异或值在范围内的数对有多少</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/01/30/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/21/Python%E7%AC%94%E8%AE%B0/">Python笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/21/Python%E7%BB%83%E4%B9%A0%E9%A2%98/">Python练习题</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/10/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">深度学习笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/05/%E6%AF%8F%E6%97%A5%E5%8A%9B%E6%89%A3-%E7%BB%9F%E8%AE%A1%E5%BC%82%E6%88%96%E5%80%BC%E5%9C%A8%E8%8C%83%E5%9B%B4%E5%86%85%E7%9A%84%E6%95%B0%E5%AF%B9%E6%9C%89%E5%A4%9A%E5%B0%91/">每日力扣 -统计异或值在范围内的数对有多少</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2023 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
